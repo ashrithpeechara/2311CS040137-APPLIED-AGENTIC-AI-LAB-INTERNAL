@@ -1,0 +1,6 @@
+record_id,domain,scenario,status,compliance_score,violations,accuracy
+SYNTH_TX_001,Financial & AML Compliance,Cross-Border Wire Transfer Exceeding Reporting Threshold,NON_COMPLIANT,30.0,2,100%
+SYNTH_PII_002,Data Privacy & GDPR,Customer Support Ticket Containing Unmasked PII,NON_COMPLIANT,30.0,2,100%
+SYNTH_SEC_003,InfoSec & Access Control,Production Cloud Infrastructure Access with MFA Enabled,COMPLIANT,100.0,0,100%
+SYNTH_HEALTH_004,Healthcare & HIPAA,Patient Clinical Summary Data Sharing Without De-Identification,NON_COMPLIANT,65.0,1,100%
+SYNTH_AI_005,AI Governance & Fair Lending,Credit Underwriting Model Risk Assessment with Explanations,COMPLIANT,100.0,0,100%

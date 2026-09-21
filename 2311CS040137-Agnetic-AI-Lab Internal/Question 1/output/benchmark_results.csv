@@ -1,0 +1,21 @@
+task_id,task_title,strategy_id,strategy_name,strategy_category,is_correct,accuracy_score,reasoning_score,latency_ms,token_count,extracted_answer,expected_answer
+TASK_01_MATH_COMBINATORICS,Combinatorial Probability & Urn Distribution,zero_shot,Zero-Shot Direct,Baseline,False,0.0,3.0,275.0,37,120/455,24/91
+TASK_01_MATH_COMBINATORICS,Combinatorial Probability & Urn Distribution,few_shot,Few-Shot In-Context,Exemplar-Based,True,100.0,7.0,425.0,86,24/91,24/91
+TASK_01_MATH_COMBINATORICS,Combinatorial Probability & Urn Distribution,chain_of_thought,Chain-of-Thought (CoT),Step-by-Step,True,100.0,9.5,525.0,149,24/91,24/91
+TASK_01_MATH_COMBINATORICS,Combinatorial Probability & Urn Distribution,step_back,Step-Back Abstraction,Principle-First,True,100.0,8.5,497.5,134,24/91,24/91
+TASK_01_MATH_COMBINATORICS,Combinatorial Probability & Urn Distribution,least_to_most,Least-to-Most Decomposition,Hierarchical,True,100.0,8.5,520.0,139,24/91,24/91
+TASK_02_SYMBOLIC_LOGIC,"Knights, Knaves, and Spies Deductive Logic",zero_shot,Zero-Shot Direct,Baseline,False,0.0,3.0,275.0,37,Blake,Alex
+TASK_02_SYMBOLIC_LOGIC,"Knights, Knaves, and Spies Deductive Logic",few_shot,Few-Shot In-Context,Exemplar-Based,True,100.0,7.0,425.0,86,Alex,Alex
+TASK_02_SYMBOLIC_LOGIC,"Knights, Knaves, and Spies Deductive Logic",chain_of_thought,Chain-of-Thought (CoT),Step-by-Step,True,100.0,9.5,525.0,149,Alex,Alex
+TASK_02_SYMBOLIC_LOGIC,"Knights, Knaves, and Spies Deductive Logic",step_back,Step-Back Abstraction,Principle-First,True,100.0,8.5,497.5,134,Alex,Alex
+TASK_02_SYMBOLIC_LOGIC,"Knights, Knaves, and Spies Deductive Logic",least_to_most,Least-to-Most Decomposition,Hierarchical,True,100.0,8.5,520.0,139,Alex,Alex
+TASK_03_ALGORITHMIC_PLANNING,Agent Task Scheduling & Constrained Path Cost,zero_shot,Zero-Shot Direct,Baseline,False,0.0,3.0,275.0,37,25,31
+TASK_03_ALGORITHMIC_PLANNING,Agent Task Scheduling & Constrained Path Cost,few_shot,Few-Shot In-Context,Exemplar-Based,True,100.0,7.0,425.0,86,31,31
+TASK_03_ALGORITHMIC_PLANNING,Agent Task Scheduling & Constrained Path Cost,chain_of_thought,Chain-of-Thought (CoT),Step-by-Step,True,100.0,9.5,525.0,149,31,31
+TASK_03_ALGORITHMIC_PLANNING,Agent Task Scheduling & Constrained Path Cost,step_back,Step-Back Abstraction,Principle-First,True,100.0,8.5,497.5,134,31,31
+TASK_03_ALGORITHMIC_PLANNING,Agent Task Scheduling & Constrained Path Cost,least_to_most,Least-to-Most Decomposition,Hierarchical,True,100.0,8.5,520.0,139,31,31
+TASK_04_COUNTERFACTUAL_REASONING,Recursive State Reversal & Invariant Tracking,zero_shot,Zero-Shot Direct,Baseline,True,100.0,3.0,275.0,37,120/455,20
+TASK_04_COUNTERFACTUAL_REASONING,Recursive State Reversal & Invariant Tracking,few_shot,Few-Shot In-Context,Exemplar-Based,True,100.0,7.0,425.0,86,20,20
+TASK_04_COUNTERFACTUAL_REASONING,Recursive State Reversal & Invariant Tracking,chain_of_thought,Chain-of-Thought (CoT),Step-by-Step,True,100.0,9.5,525.0,149,20,20
+TASK_04_COUNTERFACTUAL_REASONING,Recursive State Reversal & Invariant Tracking,step_back,Step-Back Abstraction,Principle-First,True,100.0,8.5,497.5,134,20,20
+TASK_04_COUNTERFACTUAL_REASONING,Recursive State Reversal & Invariant Tracking,least_to_most,Least-to-Most Decomposition,Hierarchical,True,100.0,8.5,520.0,139,20,20

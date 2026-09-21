@@ -1,0 +1,111 @@
+[
+  {
+    "id": "SYNTH_TX_001",
+    "domain": "Financial & AML Compliance",
+    "scenario_title": "Cross-Border Wire Transfer Exceeding Reporting Threshold",
+    "data_payload": {
+      "transaction_id": "TX-8921",
+      "account_id": "ACC-4491",
+      "amount_usd": 15000.0,
+      "sender_country": "USA",
+      "receiver_country": "Cayman Islands",
+      "kyc_verified": true,
+      "sar_filed": false,
+      "purpose": "Consulting Services"
+    },
+    "target_rules": [
+      "RULE_FIN_01_THRESHOLD",
+      "RULE_FIN_02_HIGH_RISK_JURISDICTION"
+    ],
+    "ground_truth_status": "NON_COMPLIANT",
+    "expected_violations": [
+      "Amount >= $10,000 without mandatory SAR/CTR flag",
+      "High-risk offshore jurisdiction transfer"
+    ]
+  },
+  {
+    "id": "SYNTH_PII_002",
+    "domain": "Data Privacy & GDPR",
+    "scenario_title": "Customer Support Ticket Containing Unmasked PII",
+    "data_payload": {
+      "ticket_id": "TICK-3301",
+      "customer_id": "CUST-104",
+      "support_channel": "Public Forum / Open Channel",
+      "message_text": "Please update my billing credit card: 4532-8921-9901-2241 and SSN: 092-44-8819.",
+      "data_retention_days": 180,
+      "consent_obtained": true,
+      "is_encrypted": false
+    },
+    "target_rules": [
+      "RULE_PRIV_01_PII_EXPOSURE",
+      "RULE_PRIV_02_ENCRYPTION"
+    ],
+    "ground_truth_status": "NON_COMPLIANT",
+    "expected_violations": [
+      "Plaintext PII/PCI exposure on open support channel",
+      "Unencrypted financial and identity records"
+    ]
+  },
+  {
+    "id": "SYNTH_SEC_003",
+    "domain": "InfoSec & Access Control",
+    "scenario_title": "Production Cloud Infrastructure Access with MFA Enabled",
+    "data_payload": {
+      "user_id": "USR-DEV-88",
+      "role": "Senior DevOps Engineer",
+      "resource": "AWS-K8s-Production-Cluster",
+      "auth_method": "FIDO2_Hardware_MFA",
+      "ip_address": "198.51.100.24 (Corporate VPN)",
+      "session_duration_hrs": 2.5,
+      "least_privilege_verified": true
+    },
+    "target_rules": [
+      "RULE_SEC_01_MFA_ENFORCEMENT",
+      "RULE_SEC_02_VPN_ALLOWLIST"
+    ],
+    "ground_truth_status": "COMPLIANT",
+    "expected_violations": []
+  },
+  {
+    "id": "SYNTH_HEALTH_004",
+    "domain": "Healthcare & HIPAA",
+    "scenario_title": "Patient Clinical Summary Data Sharing Without De-Identification",
+    "data_payload": {
+      "record_id": "PHI-902",
+      "patient_name": "Eleanor Vance",
+      "diagnosis": "Type-2 Diabetes Mellitus",
+      "recipient_party": "Third-Party Marketing Vendor",
+      "de_identified": false,
+      "patient_opt_in": false,
+      "business_associate_agreement": false
+    },
+    "target_rules": [
+      "RULE_HIPAA_01_PHI_TRANSFER",
+      "RULE_HIPAA_02_BAA_REQUIRED"
+    ],
+    "ground_truth_status": "NON_COMPLIANT",
+    "expected_violations": [
+      "Unauthorized PHI transmission without patient consent",
+      "Missing Business Associate Agreement (BAA)"
+    ]
+  },
+  {
+    "id": "SYNTH_AI_005",
+    "domain": "AI Governance & Fair Lending",
+    "scenario_title": "Credit Underwriting Model Risk Assessment with Explanations",
+    "data_payload": {
+      "model_id": "MDL-CREDIT-V4",
+      "protected_attributes_excluded": true,
+      "disparate_impact_ratio": 0.92,
+      "adversarial_robustness_score": 0.88,
+      "explainability_feature_attribution_available": true,
+      "human_in_the_loop_review": true
+    },
+    "target_rules": [
+      "RULE_AI_01_FAIRNESS_THRESHOLD",
+      "RULE_AI_02_EXPLAINABILITY"
+    ],
+    "ground_truth_status": "COMPLIANT",
+    "expected_violations": []
+  }
+]

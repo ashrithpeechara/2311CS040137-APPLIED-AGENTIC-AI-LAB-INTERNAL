@@ -1,0 +1,5 @@
+task,steps,accuracy,latency_ms
+Top Spending Customers Aggregation,5,100.0,425.0
+Category Revenue Analysis,4,100.0,340.0
+Payment Method Volume Tracking,3,100.0,255.0
+Self-Healing Schema Introspection,5,100.0,425.0

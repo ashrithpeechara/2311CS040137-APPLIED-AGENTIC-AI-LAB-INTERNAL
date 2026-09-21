@@ -1,0 +1,118 @@
+task_id,task_title,task_category,strategy_id,strategy_name,strategy_category,is_correct,accuracy_score,reasoning_score,latency_ms,token_count,extracted_answer,expected_answer,response_text,execution_mode
+TASK_01_MATH_COMBINATORICS,Combinatorial Probability & Urn Distribution,Mathematical Reasoning,zero_shot,Zero-Shot Direct,Baseline,False,0.0,3.0,260.0,38,120/455,24/91,"The probability of picking three different colors is 120/455.
+FINAL ANSWER: 120/455",SIMULATION_FALLBACK
+TASK_01_MATH_COMBINATORICS,Combinatorial Probability & Urn Distribution,Mathematical Reasoning,few_shot,Few-Shot In-Context,Exemplar-Based,True,100.0,6.0,430.0,90,24/91,24/91,"Calculation:
+Total combinations = 15! / (3! * 12!) = 455.
+Favorable ways = 4 * 5 * 6 = 120.
+Fraction in lowest terms = 24/91.
+FINAL ANSWER: 24/91",SIMULATION_FALLBACK
+TASK_01_MATH_COMBINATORICS,Combinatorial Probability & Urn Distribution,Mathematical Reasoning,chain_of_thought,Chain-of-Thought (CoT),Trace Elicitation,True,100.0,10.0,510.0,135,24/91,24/91,"Step 1: Compute total combinations of selecting 3 balls from 15.
+Total outcomes = C(15, 3) = (15 * 14 * 13) / (3 * 2 * 1) = 455.
+Step 2: Compute favorable combinations (1 Red, 1 Blue, 1 Green).
+Favorable outcomes = C(4,1) * C(5,1) * C(6,1) = 4 * 5 * 6 = 120.
+Step 3: Calculate probability and simplify.
+P = 120 / 455 = (24 * 5) / (91 * 5) = 24/91.
+FINAL ANSWER: 24/91",SIMULATION_FALLBACK
+TASK_01_MATH_COMBINATORICS,Combinatorial Probability & Urn Distribution,Mathematical Reasoning,step_back,Step-Back Abstraction,Abstraction-First,True,100.0,6.0,430.0,90,24/91,24/91,"Calculation:
+Total combinations = 15! / (3! * 12!) = 455.
+Favorable ways = 4 * 5 * 6 = 120.
+Fraction in lowest terms = 24/91.
+FINAL ANSWER: 24/91",SIMULATION_FALLBACK
+TASK_01_MATH_COMBINATORICS,Combinatorial Probability & Urn Distribution,Mathematical Reasoning,least_to_most,Least-to-Most Decomposition,Decomposition / Agentic,True,100.0,6.0,430.0,90,24/91,24/91,"Calculation:
+Total combinations = 15! / (3! * 12!) = 455.
+Favorable ways = 4 * 5 * 6 = 120.
+Fraction in lowest terms = 24/91.
+FINAL ANSWER: 24/91",SIMULATION_FALLBACK
+TASK_02_SYMBOLIC_LOGIC,"Knights, Knaves, and Spies Deductive Logic",Symbolic & Deductive Logic,zero_shot,Zero-Shot Direct,Baseline,False,0.0,3.0,280.0,45,Blake,Alex,"Based on the statements, Blake is the Knight.
+FINAL ANSWER: Blake",SIMULATION_FALLBACK
+TASK_02_SYMBOLIC_LOGIC,"Knights, Knaves, and Spies Deductive Logic",Symbolic & Deductive Logic,few_shot,Few-Shot In-Context,Exemplar-Based,True,100.0,10.0,410.0,95,Alex,Alex,"Reasoning:
+1. Assume Alex is Knight (T): Alex says Casey is Knave -> Casey is Knave (F).
+2. Blake is Knave (F). Blake says Alex and Blake same type -> False (T!=F) consistent!
+3. Casey is Knave (F). Casey says Blake is Knight -> False consistent!
+FINAL ANSWER: Alex",SIMULATION_FALLBACK
+TASK_02_SYMBOLIC_LOGIC,"Knights, Knaves, and Spies Deductive Logic",Symbolic & Deductive Logic,chain_of_thought,Chain-of-Thought (CoT),Trace Elicitation,True,100.0,10.0,520.0,145,Alex,Alex,"Let's analyze each case systematically:
+Constraint: Exactly 1 Knight (T), 2 Knaves (F).
+Case 1: Assume Alex is Knight (T).
+- Alex says Casey is Knave -> Casey must be Knave (F).
+- Blake must be the other Knave (F). Blake says 'Alex and I are same type' -> False since Alex=T, Blake=F. Consistent!
+- Casey is Knave (F). Casey says 'Blake is Knight' -> False since Blake=F. Consistent!
+All constraints match.
+FINAL ANSWER: Alex",SIMULATION_FALLBACK
+TASK_02_SYMBOLIC_LOGIC,"Knights, Knaves, and Spies Deductive Logic",Symbolic & Deductive Logic,step_back,Step-Back Abstraction,Abstraction-First,True,100.0,10.0,490.0,130,Alex,Alex,"Step 1 - High-Level Principles:
+Truth-teller logic constraints: Knight statements map to True (1), Knave statements map to False (0). Exactly one variable is 1.
+Step 2 - Execution on Concrete Problem:
+Testing hypothesis Alex=1: Casey=0 (Alex true). Blake=0 asserts (Alex==Blake -> 1==0 False, valid). Casey=0 asserts Blake=1 (False, valid).
+FINAL ANSWER: Alex",SIMULATION_FALLBACK
+TASK_02_SYMBOLIC_LOGIC,"Knights, Knaves, and Spies Deductive Logic",Symbolic & Deductive Logic,least_to_most,Least-to-Most Decomposition,Decomposition / Agentic,True,100.0,10.0,580.0,150,Alex,Alex,"Sub-Problem 1: Evaluate Alex's statement if Alex is true.
+If Alex=T, Casey=F. Then Blake must be F.
+Sub-Problem 2: Verify Blake and Casey's statements.
+Blake says Alex==Blake -> 1==0 -> False (valid for Knave). Casey says Blake=Knight -> False (valid for Knave).
+Synthesis: Alex is the only consistent Knight.
+FINAL ANSWER: Alex",SIMULATION_FALLBACK
+TASK_03_ALGORITHMIC_PLANNING,Agent Task Scheduling & Constrained Path Cost,Algorithmic Planning,zero_shot,Zero-Shot Direct,Baseline,False,0.0,3.0,290.0,35,25,31,"Optimal order is T3, T1, T4, T2 giving sum 25.
+FINAL ANSWER: 25",SIMULATION_FALLBACK
+TASK_03_ALGORITHMIC_PLANNING,Agent Task Scheduling & Constrained Path Cost,Algorithmic Planning,few_shot,Few-Shot In-Context,Exemplar-Based,True,100.0,6.0,440.0,85,31,31,"Schedule analysis:
+Order: T1 -> T3 -> T4 -> T2.
+Completion times: 3, 5, 9, 14.
+Sum = 31 hours.
+FINAL ANSWER: 31",SIMULATION_FALLBACK
+TASK_03_ALGORITHMIC_PLANNING,Agent Task Scheduling & Constrained Path Cost,Algorithmic Planning,chain_of_thought,Chain-of-Thought (CoT),Trace Elicitation,True,100.0,8.0,540.0,160,31,31,"Let's analyze the scheduling problem with precedence constraint T1 -> T3.
+Tasks: T1=3h, T2=5h, T3=2h, T4=4h.
+Evaluating schedule permutations:
+Option A: T1 -> T3 -> T4 -> T2: C1=3, C3=5, C4=9, C2=14. Sum = 3+5+9+14 = 31h.
+Option B: T1 -> T3 -> T2 -> T4: C1=3, C3=5, C2=10, C4=14. Sum = 32h.
+Option C: T1 -> T4 -> T3 -> T2: C1=3, C4=7, C3=9, C2=14. Sum = 33h.
+Optimal sequence is T1 -> T3 -> T4 -> T2 with minimum sum of 31.
+FINAL ANSWER: 31",SIMULATION_FALLBACK
+TASK_03_ALGORITHMIC_PLANNING,Agent Task Scheduling & Constrained Path Cost,Algorithmic Planning,step_back,Step-Back Abstraction,Abstraction-First,True,100.0,8.0,540.0,160,31,31,"Let's analyze the scheduling problem with precedence constraint T1 -> T3.
+Tasks: T1=3h, T2=5h, T3=2h, T4=4h.
+Evaluating schedule permutations:
+Option A: T1 -> T3 -> T4 -> T2: C1=3, C3=5, C4=9, C2=14. Sum = 3+5+9+14 = 31h.
+Option B: T1 -> T3 -> T2 -> T4: C1=3, C3=5, C2=10, C4=14. Sum = 32h.
+Option C: T1 -> T4 -> T3 -> T2: C1=3, C4=7, C3=9, C2=14. Sum = 33h.
+Optimal sequence is T1 -> T3 -> T4 -> T2 with minimum sum of 31.
+FINAL ANSWER: 31",SIMULATION_FALLBACK
+TASK_03_ALGORITHMIC_PLANNING,Agent Task Scheduling & Constrained Path Cost,Algorithmic Planning,least_to_most,Least-to-Most Decomposition,Decomposition / Agentic,True,100.0,8.0,540.0,160,31,31,"Let's analyze the scheduling problem with precedence constraint T1 -> T3.
+Tasks: T1=3h, T2=5h, T3=2h, T4=4h.
+Evaluating schedule permutations:
+Option A: T1 -> T3 -> T4 -> T2: C1=3, C3=5, C4=9, C2=14. Sum = 3+5+9+14 = 31h.
+Option B: T1 -> T3 -> T2 -> T4: C1=3, C3=5, C2=10, C4=14. Sum = 32h.
+Option C: T1 -> T4 -> T3 -> T2: C1=3, C4=7, C3=9, C2=14. Sum = 33h.
+Optimal sequence is T1 -> T3 -> T4 -> T2 with minimum sum of 31.
+FINAL ANSWER: 31",SIMULATION_FALLBACK
+TASK_04_COUNTERFACTUAL_REASONING,Recursive State Reversal & Invariant Tracking,Multi-Step Symbolic Invariance,zero_shot,Zero-Shot Direct,Baseline,False,0.0,3.0,270.0,30,28,20,"Total distance after 4 movements is 4 * 7 = 28.
+FINAL ANSWER: 28",SIMULATION_FALLBACK
+TASK_04_COUNTERFACTUAL_REASONING,Recursive State Reversal & Invariant Tracking,Multi-Step Symbolic Invariance,few_shot,Few-Shot In-Context,Exemplar-Based,True,100.0,6.0,420.0,75,20,20,"Displacement per cycle = (4, 3).
+After 4 cycles: (16, 12).
+Distance = sqrt(16^2 + 12^2) = 20.
+FINAL ANSWER: 20",SIMULATION_FALLBACK
+TASK_04_COUNTERFACTUAL_REASONING,Recursive State Reversal & Invariant Tracking,Multi-Step Symbolic Invariance,chain_of_thought,Chain-of-Thought (CoT),Trace Elicitation,True,100.0,10.0,530.0,155,20,20,"Step 1: Determine displacement and heading per single cycle of S.
+- Forward 3 (facing North) -> (0, 3)
+- Turn 90 deg clockwise -> facing East
+- Move forward 4 -> (4, 3)
+- Turn 90 deg counter-clockwise -> facing North
+Net vector per cycle = (dx=4, dy=3), final heading = North (0 deg delta).
+Step 2: Total displacement after 4 cycles:
+Total X = 4 * 4 = 16, Total Y = 4 * 3 = 12.
+Euclidean Distance = sqrt(16^2 + 12^2) = sqrt(256 + 144) = sqrt(400) = 20.
+FINAL ANSWER: 20",SIMULATION_FALLBACK
+TASK_04_COUNTERFACTUAL_REASONING,Recursive State Reversal & Invariant Tracking,Multi-Step Symbolic Invariance,step_back,Step-Back Abstraction,Abstraction-First,True,100.0,10.0,530.0,155,20,20,"Step 1: Determine displacement and heading per single cycle of S.
+- Forward 3 (facing North) -> (0, 3)
+- Turn 90 deg clockwise -> facing East
+- Move forward 4 -> (4, 3)
+- Turn 90 deg counter-clockwise -> facing North
+Net vector per cycle = (dx=4, dy=3), final heading = North (0 deg delta).
+Step 2: Total displacement after 4 cycles:
+Total X = 4 * 4 = 16, Total Y = 4 * 3 = 12.
+Euclidean Distance = sqrt(16^2 + 12^2) = sqrt(256 + 144) = sqrt(400) = 20.
+FINAL ANSWER: 20",SIMULATION_FALLBACK
+TASK_04_COUNTERFACTUAL_REASONING,Recursive State Reversal & Invariant Tracking,Multi-Step Symbolic Invariance,least_to_most,Least-to-Most Decomposition,Decomposition / Agentic,True,100.0,10.0,530.0,155,20,20,"Step 1: Determine displacement and heading per single cycle of S.
+- Forward 3 (facing North) -> (0, 3)
+- Turn 90 deg clockwise -> facing East
+- Move forward 4 -> (4, 3)
+- Turn 90 deg counter-clockwise -> facing North
+Net vector per cycle = (dx=4, dy=3), final heading = North (0 deg delta).
+Step 2: Total displacement after 4 cycles:
+Total X = 4 * 4 = 16, Total Y = 4 * 3 = 12.
+Euclidean Distance = sqrt(16^2 + 12^2) = sqrt(256 + 144) = sqrt(400) = 20.
+FINAL ANSWER: 20",SIMULATION_FALLBACK
