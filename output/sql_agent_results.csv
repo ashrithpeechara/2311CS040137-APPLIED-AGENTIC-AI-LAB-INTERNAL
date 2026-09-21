@@ -1,5 +1,0 @@
-task_id,task_title,category,difficulty,steps,is_correct,accuracy_score,latency_ms,list_tables_calls,get_schema_calls,validate_sql_calls,execute_sql_calls
-SQL_TASK_01_TOP_SPENDERS,Top Spending Customers Aggregation,Multi-Table Aggregation & JOIN,Medium-Hard,5,True,100.0,425.87,1,2,1,1
-SQL_TASK_02_CATEGORY_REVENUE,Category Revenue & High-Performance Products,Multi-Hop Filtering & Grouping,Hard,4,True,100.0,340.41,0,2,1,1
-SQL_TASK_03_PAYMENT_BREAKDOWN,Payment Method Volume & Success Tracking,Financial Analytics & Status Join,Medium,3,True,100.0,255.24,0,1,1,1
-SQL_TASK_04_SELF_HEALING_SCHEMA,Schema Introspection & Error Recovery,ReAct Self-Healing & Foreign Keys,Complex (Requires Introspection & Auto-Recovery),5,True,100.0,425.32,0,2,2,1

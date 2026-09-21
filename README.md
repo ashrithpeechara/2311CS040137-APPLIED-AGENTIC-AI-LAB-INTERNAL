@@ -5,84 +5,79 @@
 
 ---
 
-## 🔬 Lab Experiments Included
-
-### 1️⃣ Experiment 1: Reasoning Model Benchmarking Across Prompting Strategies
-- **Objective:** Compare outputs and quantify reasoning accuracy across 5 prompting paradigms:
-  1. *Zero-Shot Direct*
-  2. *Few-Shot In-Context ($k=2$)*
-  3. *Chain-of-Thought (CoT)*
-  4. *Step-Back Abstraction*
-  5. *Least-to-Most Decomposition*
-- **Test Suite:** Mathematical Combinatorics, Symbolic Knights & Knaves Logic, Algorithmic Task Scheduling, and Counterfactual Invariant Tracking.
-- **Runner:** `python run_benchmark.py --fast`
-- **Output Report:** [`pdf/Agentic_AI_Lab_Report_2311CS040137.pdf`](file:///c:/Users/ashri/OneDrive/Desktop/internal_assessment_agentic_ai/pdf/Agentic_AI_Lab_Report_2311CS040137.pdf)
-
----
-
-### 2️⃣ Experiment 2: SQL Agent with Tool Use (ReAct Architecture)
-- **Objective:** Develop an autonomous ReAct (Reasoning + Acting) SQL database agent equipped with dynamic introspection, validation, and safe query execution tools.
-- **Tools Provided:**
-  - `list_tables()`: Introspects database schema metadata.
-  - `get_schema(table)`: Retrieves DDL, column types, foreign keys, and live sample rows.
-  - `validate_sql(query)`: Dry-runs SQL queries via `EXPLAIN QUERY PLAN` to catch errors pre-execution.
-  - `execute_sql(query)`: Safely executes read-only `SELECT` queries with safety guards against mutations.
-- **Database:** SQLite E-Commerce Relational Schema (`customers`, `products`, `orders`, `order_items`, `payments`).
-- **Capabilities:** Multi-table relational joins, financial aggregations, and self-healing error recovery.
-- **Runner:** `python run_sql_agent.py`
-- **Output Report:** [`pdf/Agentic_AI_Lab_Report_SQL_Agent_2311CS040137.pdf`](file:///c:/Users/ashri/OneDrive/Desktop/internal_assessment_agentic_ai/pdf/Agentic_AI_Lab_Report_SQL_Agent_2311CS040137.pdf)
-
----
-
-## 📁 Repository Directory Structure
+## 📁 Repository Structure
 
 ```
-internal_assessment_agentic_ai/
-├── project/                     # Total development work
-│   ├── __init__.py
-│   ├── config.py                # Configurations, metadata, file paths
-│   ├── strategies.py            # Exp 1: Prompting strategies definitions
-│   ├── benchmark_suite.py       # Exp 1: Reasoning tasks suite
-│   ├── evaluator.py             # Exp 1: Scoring engine & API invocation
-│   ├── visualizer.py            # Exp 1: Comparative plots & radar charts
-│   ├── sql_db.py                # Exp 2: SQLite E-Commerce database setup
-│   ├── sql_tools.py             # Exp 2: Database tool suite (list, schema, validate, execute)
-│   ├── sql_benchmark_suite.py   # Exp 2: Relational business queries test suite
-│   ├── sql_react_agent.py       # Exp 2: ReAct agent reasoning & execution loop
-│   └── sql_visualizer.py        # Exp 2: Tool invocations & trajectory charts
-├── output/                      # All experimental outputs & visualizations
-│   ├── ecommerce.db             # Relational SQLite database
-│   ├── benchmark_results.json   # Exp 1: JSON traces
-│   ├── benchmark_results.csv    # Exp 1: Tabular results
-│   ├── prompting_strategies_accuracy.png
-│   ├── latency_and_tokens_comparison.png
-│   ├── reasoning_dimensions_radar.png
-│   ├── sql_agent_results.json   # Exp 2: Trajectory logs
-│   ├── sql_agent_results.csv    # Exp 2: SQL tabular results
-│   ├── sql_tool_usage.png       # Exp 2: Tool invocations chart
-│   └── sql_agent_success.png    # Exp 2: Trajectory depth chart
-├── pdf/                         # Examination PDF Reports
-│   ├── generate_report.py       # Exp 1 PDF compiler
-│   ├── generate_sql_report.py   # Exp 2 PDF compiler
-│   ├── Agentic_AI_Lab_Report_2311CS040137.pdf           # Exp 1 Report
-│   └── Agentic_AI_Lab_Report_SQL_Agent_2311CS040137.pdf # Exp 2 Report
-├── run_benchmark.py             # Exp 1 orchestrator
-├── run_sql_agent.py             # Exp 2 orchestrator
-├── requirements.txt             # Project dependencies
-├── .env.example                 # Environment variable template
-└── README.md                    # Project documentation
+2311CS040137-Agnetic-AI-Lab Internal/
+├── Question 1/
+│   ├── code/
+│   │   └── run_q1.py                 # Reasoning Model Benchmarking (5 Prompting Strategies)
+│   └── output/
+│       ├── output.md                 # Markdown results & analysis
+│       ├── benchmark_results.json    # JSON evaluation traces
+│       ├── benchmark_results.csv     # Tabular performance metrics
+│       ├── prompting_strategies_accuracy.png
+│       ├── latency_and_tokens_comparison.png
+│       └── reasoning_dimensions_radar.png
+│
+├── Question 2/
+│   ├── code/
+│   │   └── run_q2.py                 # SQL Agent with Database Tools (ReAct Architecture)
+│   └── output/
+│       ├── output.md                 # Markdown results, trajectories & self-healing case study
+│       ├── ecommerce.db              # Relational SQLite database
+│       ├── sql_agent_results.json    # ReAct reasoning & execution logs
+│       ├── sql_agent_results.csv     # Tabular query metrics
+│       ├── sql_tool_usage.png        # Tool invocation breakdown chart
+│       └── sql_agent_success.png     # Trajectory reasoning depth chart
+│
+├── Question 3/
+│   ├── code/
+│   │   └── run_q3.py                 # Policy Compliance Agent (Rule-Based Evaluation + Synthetic Data)
+│   └── output/
+│       ├── output.md                 # Markdown results & compliance audit report
+│       ├── synthetic_compliance_data.json # Multi-domain synthetic compliance dataset
+│       ├── compliance_results.json   # Full audit results & remediation actions
+│       ├── compliance_results.csv    # Tabular compliance metrics
+│       ├── compliance_distribution.png # Domain compliance score distribution
+│       └── policy_risk_radar.png     # Rule severity & governance breakdown
+│
+└── Reports/
+    ├── generate_all_reports.py       # Master PDF report compiler
+    ├── Report_Question_1_2311CS040137.pdf  # PDF Report for Question 1 (3 Pages)
+    ├── Report_Question_2_2311CS040137.pdf  # PDF Report for Question 2 (3 Pages)
+    └── Report_Question_3_2311CS040137.pdf  # PDF Report for Question 3 (3 Pages)
 ```
 
 ---
 
-## 🚀 How to Run
+## 🔬 Examination Questions Overview
 
-### Run Experiment 1 (Prompting Strategies Benchmark):
+### 1️⃣ Question 1: Reasoning Model Benchmarking Across Prompting Strategies
+- **Paradigms Evaluated:** *Zero-Shot Direct, Few-Shot In-Context ($k=2$), Chain-of-Thought (CoT), Step-Back Abstraction, Least-to-Most Decomposition*.
+- **Benchmark Suite:** Mathematical Combinatorics, Symbolic Knights & Knaves Logic, Algorithmic Task Scheduling, and Counterfactual Invariant Tracking.
+- **Run:** `python "2311CS040137-Agnetic-AI-Lab Internal/Question 1/code/run_q1.py"`
+
+### 2️⃣ Question 2: SQL Agent with Tool Use (ReAct Architecture)
+- **Agent Paradigm:** ReAct (Reasoning + Acting) loop with pre-execution validation and schema self-healing.
+- **Database Tools:** `list_tables()`, `get_schema()`, `validate_sql()`, `execute_sql()`.
+- **Database Schema:** SQLite E-Commerce Relational Database (`customers`, `products`, `orders`, `order_items`, `payments`).
+- **Run:** `python "2311CS040137-Agnetic-AI-Lab Internal/Question 2/code/run_q2.py"`
+
+### 3️⃣ Question 3: Policy Compliance Agent (Rule-Based Evaluation & Synthetic Data)
+- **Capabilities:** Autonomous compliance auditing across Financial/AML, GDPR/CCPA PII, SOC2 MFA, HIPAA PHI, and AI Governance.
+- **Engine:** Deterministic rule evaluation engine + synthetic compliance scenario generator + automated remediation generator.
+- **Run:** `python "2311CS040137-Agnetic-AI-Lab Internal/Question 3/code/run_q3.py"`
+
+---
+
+## 📄 PDF Examination Reports
+All PDF examination reports are located in [`2311CS040137-Agnetic-AI-Lab Internal/Reports/`](file:///c:/Users/ashri/OneDrive/Desktop/internal_assessment_agentic_ai/2311CS040137-Agnetic-AI-Lab%20Internal/Reports) with student details on all pages:
+- **`Report_Question_1_2311CS040137.pdf`**
+- **`Report_Question_2_2311CS040137.pdf`**
+- **`Report_Question_3_2311CS040137.pdf`**
+
+To recompile all reports:
 ```bash
-python run_benchmark.py --fast
-```
-
-### Run Experiment 2 (ReAct SQL Agent with Tool Use):
-```bash
-python run_sql_agent.py
+python "2311CS040137-Agnetic-AI-Lab Internal/Reports/generate_all_reports.py"
 ```
